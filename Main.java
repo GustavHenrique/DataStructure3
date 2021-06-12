@@ -1,5 +1,7 @@
 package com.company;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -44,7 +46,7 @@ public class Main {
 
     }
 
-    public Object top() {
+    public static Object top() {
 
         if(top >= 0){
 
@@ -59,7 +61,8 @@ public class Main {
 
     }
 
-    public static Object pop() {
+    public static @Nullable
+    Object pop() {
 
         if( top >= 0) {
 
@@ -190,7 +193,7 @@ public class Main {
         int k = 0;
         while(top >= 0 && k < 10) {
 
-            enqueue(pile[top]);
+            enqueue(top());
             pop();
 
             System.out.println("Queue [" + k + "]: " + queue[k]);
@@ -223,7 +226,7 @@ public class Main {
 
         while(top >= 0 && k < 10) {
 
-            enqueue(pile[top]);
+            enqueue(top());
             pop();
 
             System.out.println("Queue [" + k + "]: " + queue[k]);
@@ -233,7 +236,6 @@ public class Main {
 
         System.out.println("Step 6:");
         System.out.println(Arrays.toString(queue));
-
 
     }
 
