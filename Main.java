@@ -113,7 +113,7 @@ public class Main {
 
     }
 
-    private int increment(int idx) {
+    private static int increment(int idx) {
 
         idx++;
         if(idx == queue.length) {
@@ -126,7 +126,7 @@ public class Main {
 
     }
 
-    public boolean enqueue(Object x) {
+    public static boolean enqueue(Object x) {
 
         if(lengthQueue == queue.length) {
 
@@ -190,7 +190,7 @@ public class Main {
         int k = 0;
         while(top >= 0 && k < 10) {
 
-            queue[k] = pile[top];
+            enqueue(pile[top]);
             pop();
 
             System.out.println("Queue [" + k + "]: " + queue[k]);
@@ -223,7 +223,7 @@ public class Main {
 
         while(top >= 0 && k < 10) {
 
-            queue[k] = pile[top];
+            enqueue(pile[top]);
             pop();
 
             System.out.println("Queue [" + k + "]: " + queue[k]);
